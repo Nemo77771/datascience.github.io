@@ -1,0 +1,158 @@
+---
+title: "Replication via R & Quarto - How Can Lower-Income Countries Collect More Taxes? The Role of Technology, Tax Agents, and Politics"
+author: "Arunima Pandey"
+date: "2024-10-28"
+format: html
+output: slidy_presentaion
+---
+
+# Presentation on Replication Project
+
+## Introduction
+This presentation replicates a key figure from the paper *"How Can Lower-Income Countries Collect More Taxes? The Role of Technology, Tax Agents, and Politics"* by Oyebola Okunogbe and Gabriel Tourek. The focus is on understanding the dataset used to generate insights and the specific challenges faced in replicating the results.
+
+---
+
+## Straight dive into the dataset
+The dataset contains key metrics on tax revenues in Lagos State, Nigeria, and spans multiple years, which enables a comprehensive view of tax performance over time. The specific figure replicated in this presentation is Figure 4 from the paper, which visually represents "Lagos total tax from digest in billions" over the years.
+
+---
+
+## Challenges
+
+### Loading .dta Files (Encoding and Conversion Errors)
+- **Issue**: Encountered an error when loading `.dta` files: `unable to convert string to the requested encoding`. This error blocked some files from being read directly into R.
+
+### Replicating the Graph with Complete Year Labels
+- **Issue**: The axis labels initially did not display each year from 1999 to 2012, which made the plot less detailed and difficult to interpret.
+
+### Error Messages: "Zero-length variable name" and Unexpected Symbols
+- **Issue**: Errors such as `"Error: attempt to use zero-length variable name"` and `"Error: unexpected symbol"` were triggered by spaces in column names, like `Lagos total tax from digest in billions`.
+
+### GitHub Pages Site Display Issue (404 Error)
+- **Issue**: Received a 404 error when attempting to access the GitHub Pages site due to the absence of an `index.html` file in the repository's root directory.
+
+
+```{r}
+install.packages("knitr")
+library(knitr)
+```
+
+```{r}
+install.packages("quarto")
+```
+
+```{r}
+install.packages("tinytex")
+library(tinytex)
+```
+
+```{r}
+if (!require(pacman)) install.packages("pacman")
+pacman::p_load(knitr, rmarkdown, papaja)
+
+```
+
+```{r}
+install.packages("haven")
+library(haven)
+```
+
+```{r}
+getwd()
+```
+
+```{r}
+install.packages("ggplot2")
+library(ggplot2)
+```
+
+```{r}
+install.packages("dplyr")
+library(dplyr)
+```
+
+```{r}
+setwd("/Users/arunimapandey/dsarunima2024/Packagenew/Data/01_base/unuwider_data")
+```
+
+```{r}
+data <- read_dta("/Users/arunimapandey/dsarunima2024/Packagenew/Data/01_base/unuwider_data/Figure1.dta", encoding = "latin1")
+head(data)
+```
+
+```{r}
+class(data)
+```
+```{r}
+
+```
+
+```{r}
+colnames(data)
+```
+
+```{r}
+summary(data)
+```
+
+```{r}
+country_data <- data %>% select(country)
+head(country_data)
+```
+
+```{r}
+dataset <- read_dta("/Users/arunimapandey/dsarunima2024/Packagenew/Data/01_base/unuwider_data/figurex.dta")
+head(dataset)
+```
+
+```{r}
+install.packages("readxl")
+library(readxl)
+```
+
+```{r}
+set2 <- read_excel("/Users/arunimapandey/dsarunima2024/Packagenew/Data/01_base/lagos_data/Lagos.xlsx")
+head(set2)
+```
+
+```{r}
+colnames(set2)
+```
+
+```{r}
+rownames(set2)
+```
+
+
+
+
+```{r}
+names(set2)
+```
+
+```{r}
+library(ggplot2)
+install.packages("ggplot2")
+library(ggplot2)
+```
+
+```{r}
+ggplot(set2, aes(x = Year)) +
+  geom_line(aes(y = `Lagos total tax from digest in billions`), color = "black") +
+  labs(title = "Tax Revenues in Lagos State, Nigeria",
+       x = "Year",
+       y = "Lagos total tax from digest in billions")
+
+```
+
+```{r}
+if (!require(pacman)) install.packages("pacman")
+pacman::p_load(usethis)
+create_github_token() 
+```
+```{r}
+Sys.setenv(GITHUB_PAT = "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")  # Replace "your_token" with your actual GitHub token
+
+```
+

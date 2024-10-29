@@ -1,0 +1,20 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{4}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{Tax/GDP 2018}&\multicolumn{1}{c}{Tax/GDP 2018}&\multicolumn{1}{c}{Tax/GDP 2018}&\multicolumn{1}{c}{Tax/GDP 2018}\\
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         \\
+\hline
+index\_full\_new  &    2.155\sym{*}  &                  &                  &                  \\
+                &  (1.133)         &                  &                  &                  \\
+index\_identcap  &                  &    1.679\sym{*}  &                  &                  \\
+                &                  &  (0.858)         &                  &                  \\
+index\_detection &                  &                  &    2.136\sym{**} &                  \\
+                &                  &                  &  (1.008)         &                  \\
+index\_collection&                  &                  &                  &    0.033         \\
+                &                  &                  &                  &  (1.031)         \\
+\hline
+Observations    &       75         &       75         &       75         &       75         \\
+\hline\hline
+\end{tabular}
+}

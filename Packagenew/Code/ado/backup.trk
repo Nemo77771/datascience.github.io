@@ -1,0 +1,141 @@
+* 00000004
+*! version 1.0.0
+* Do not erase or edit this file
+* It is used by Stata to track the ado and help
+* files you have installed.
+
+S http://fmwww.bc.edu/repec/bocode/e
+N estout.pkg
+D  3 Nov 2023
+U 1
+d 'ESTOUT': module to make regression tables
+d 
+d  estout produces a table of regression results from one or
+d several models for use with spreadsheets, LaTeX, HTML, or a
+d word-processor table. eststo stores a quick copy of the active
+d estimation results for later tabulation. esttab is a wrapper for
+d estout. It displays a pretty looking publication-style regression
+d table without much typing. estadd adds additional results to the
+d e()-returns for one or several models previously fitted and
+d stored. This package subsumes the previously circulated esto,
+d esta, estadd,  and estadd_plus. An earlier version of estout is
+d available  as estout1.
+d 
+d KW: estimates
+d KW: LaTeX
+d KW: HTML
+d KW: word processor
+d KW: output
+d 
+d Requires: Stata version 8.2
+d 
+d Distribution-Date: 20230212
+d 
+d Author: Ben Jann, University of Bern
+d Support: email jann@@soz.unibe.ch
+d 
+f _\_eststo.ado
+f _\_eststo.hlp
+f e\estadd.ado
+f e\estadd.hlp
+f e\estout.ado
+f e\estout.hlp
+f e\eststo.ado
+f e\eststo.hlp
+f e\estpost.ado
+f e\estpost.hlp
+f e\esttab.ado
+f e\esttab.hlp
+e
+S http://fmwww.bc.edu/repec/bocode/g
+N grstyle.pkg
+D  3 Nov 2023
+U 2
+d 'GRSTYLE': module to customize the overall look of graphs
+d 
+d  grstyle allows you to customize the overall look of graphs from
+d within a do-file without having to fiddle around with external
+d scheme files. The advantage of grstyle over manually editing a
+d scheme file is that everything needed to reproduce your graphs
+d can be included in a single do-file.
+d 
+d KW: graphics
+d KW: scheme files
+d KW: custom graphics
+d KW: plot
+d 
+d Requires: Stata version 9.2 and palettes from SSC (q.v.)
+d 
+d Distribution-Date: 20200919
+d 
+d Author: Ben Jann, University of Bern
+d Support: email jann@@soz.unibe.ch
+d 
+f g\grstyle.ado
+f g\grstyle.hlp
+f g\grstyle_set.ado
+f g\grstyle_set.hlp
+e
+S http://fmwww.bc.edu/repec/bocode/p
+N palettes.pkg
+D  3 Nov 2023
+U 3
+d 'PALETTES': module to provide color palettes, symbol palettes, and line pattern palettes
+d 
+d  The palettes module contains three commands: colorpalette,
+d symbolpalette, and linepalette. The commands provide color,
+d symbol, and line pattern palettes for use in Stata graphs.
+d 
+d KW: graphics
+d KW: colors
+d KW: marker symbols
+d KW: line patterns
+d 
+d Requires: Stata version 14.2 and colrspace from SSC (q.v.); (version 9.2 for colorpalette9)
+d 
+d Distribution-Date: 20220421
+d 
+d Author: Ben Jann, University of Bern
+d Support: email jann@@soz.unibe.ch
+d 
+f p\palettes.hlp
+f c\colorpalette.ado
+f c\colorpalette.sthlp
+f c\colorpalette9.ado
+f c\colorpalette9.hlp
+f l\linepalette.ado
+f l\linepalette.hlp
+f s\symbolpalette.ado
+f s\symbolpalette.hlp
+f c\colorcheck.ado
+f c\colorcheck.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/r
+N revrs.pkg
+D  3 Nov 2023
+U 4
+d 'REVRS': module to reverse variable value order
+d 
+d This is a module to reverse the order of a variable's values and
+d maintain specified  value labels. `revrs' is especially helpful
+d for quickly recoding multiple categorical or ordinal response
+d variables to follow a similar direction. Roger Newson's sencode
+d package is required.
+d 
+d KW: data management
+d KW: reverse
+d KW: survey data
+d KW: values
+d 
+d Requires: Stata version 8.2
+d 
+d Distribution-Date: 20070413
+d 
+d Author: Kyle C. Longest, Univ. of North Carolina - Chapel Hill
+d Support: email klongest@@email.unc.edu
+d 
+f r\revrs.ado
+f r\revrs.hlp
+f s\sencode.ado
+f s\sencode.hlp
+e
